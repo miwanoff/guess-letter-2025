@@ -1,5 +1,9 @@
 const word = "прокрастинація";
 
+const tries = word.length;
+
+let remain = word.length - 2;
+
 let answer = []; // що відкрито
 
 answer[0] = word[0];
@@ -8,9 +12,11 @@ answer[word.length - 1] = word[word.length - 1];
 for (let i = 1; i < word.length - 1; i++) {
   answer[i] = "_";
 }
-let guess = document.getElementById("guess");
-let answ = document.getElementById("answ");
-answ.innerHTML = answer.join(" ");
+let guessButton = document.getElementById("guess");
+let answElement = document.getElementById("answ");
+let remainElement = document.getElementById("remain");
+answElement.innerHTML = answer.join(" ");
+remainElement.innerHTML  = remain;
 
 console.log(answer.join(" "));
 
@@ -20,11 +26,12 @@ function guessLetter() {
   for (let i = 1; i < word.length - 1; i++) {
     if (letter === word[i]) {
       answer[i] = letter;
+      remain--;
     }
   }
 
-  answ.innerHTML = answer.join(" ");
+  answElement.innerHTML = answer.join(" ");
+  remainElement.innerHTML  = remain;
 }
 
-
-guess.addEventListener("click", guessLetter)
+guessButton.addEventListener("click", guessLetter);
