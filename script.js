@@ -14,6 +14,7 @@ const words = [
 const word = "матриця";
 
 const tries = word.length;
+let count = 0;
 
 let remain = word.length - 2;
 
@@ -40,6 +41,7 @@ function guessLetter() {
     if (letter === word[i]) {
       answer[i] = letter;
       remain--;
+      count++;
     }
   }
 
