@@ -1,4 +1,17 @@
-const word = "прокрастинація";
+const words = [
+  "прокрастинація",
+  "телефон",
+  "комп'ютер",
+  "шоколад",
+  "програмування",
+  "університет",
+  "кава",
+  "страшилка",
+  "дракон",
+  "планета",
+];
+
+const word = "матриця";
 
 const tries = word.length;
 
@@ -16,7 +29,7 @@ let guessButton = document.getElementById("guess");
 let answElement = document.getElementById("answ");
 let remainElement = document.getElementById("remain");
 answElement.innerHTML = answer.join(" ");
-remainElement.innerHTML  = remain;
+remainElement.innerHTML = remain;
 
 console.log(answer.join(" "));
 
@@ -31,7 +44,7 @@ function guessLetter() {
   }
 
   answElement.innerHTML = answer.join(" ");
-  remainElement.innerHTML  = remain;
+  remainElement.innerHTML = remain;
 }
 
 guessButton.addEventListener("click", guessLetter);
